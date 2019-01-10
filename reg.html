@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>注册页面</title>
+<link rel="stylesheet" type="text/css" href="css/reg.css"/>
+</head>
+<body>
+<!-- header -->
+<div class="W_main">
+	<div class="header">
+		<a href="#">
+			<img src="img/logo-icon.png"/>
+		</a>
+		<a href="#">
+			<img src="img/slog.png"/>
+		</a>
+	</div>
+</div>
+<!-- content -->
+<div class="W_main_content">
+	<form class="content">
+		<h3>注册万表会员</h3>
+		<div class="memberInfo">
+			<div class="box">
+				<p>
+					<em>
+						<img src="img/ii1.jpg"/>
+					</em>
+					<input type="text" id="txt" placeholder="请输入手机号"/>
+					<i class="showI1 showI"></i>
+				</p>
+			</div>
+			<div class="box">
+				<p>
+					<em>
+						<img src="img/ii2.jpg"/>
+					</em>
+					<input type="text" id="picYzm" placeholder="请输入图形验证码"/>
+					<span class="img-wrap">
+						<img class="imgs" src="img/ca6.png"/>
+					</span>
+					<i class="showI2 showI"></i>
+				</p>
+			</div>
+			<div class="box">
+				<p>
+					<em>
+						<img src="img/ii2.jpg"/>
+					</em>
+					<input type="text"  id="dYzm" placeholder="请输入短信验证码"/>
+					<span class="img-wrap getYzm">获取验证码</span>
+					<i class="showI3 showI"></i>
+				</p>
+			</div>
+			<div class="box">
+				<p>
+					<em>
+						<img src="img/ii3.jpg"/>
+					</em>
+					<input type="text" id="password" placeholder="请设置密码"/>
+					<i class="showI4 showI"></i>
+				</p>
+			</div>
+			<div class="box">
+				<p>
+					<em>
+						<img src="img/ii3.jpg"/>
+					</em>
+					<input type="text" id="againPass" placeholder="请再次输入密码"/>
+					<i class="showI5 showI"></i>
+				</p>
+			</div>
+			<div class="box">
+				<p>
+					<input type="text" id="tt" placeholder="如有推荐人，请填写推荐人手机号"  />
+				</p>
+			</div>
+			<div class="box">
+				<p>
+					<input type="button" id="regBtn" value="立即注册"/>
+				</p>
+			</div>
+			<p class="condition">
+				点击“立即注册”，即表示您同意并愿意遵守
+				<a href="#">万表网用户协议</a>
+			</p>
+		</div>
+	</form>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/ajax1808.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 手机号正则判断
+		$("#txt").blur(function(){
+			let reg=/^[1][3-9]\d{9}$/;
+			if(reg.test($("#txt").val())){
+				$(".showI1").css("color","green").html("账号输入正确");
+			}else{
+				$(".showI1").css("color","red").html("账号有误，请重新输入");
+			}
+		})
+
+		// 设置密码验证
+		$("#password").blur(function(){
+			let reg=/^[a-zA-Z_]\w{5,15}$/;
+			if(reg.test($("#password").val())){
+				$(".showI4").css("color","green").html("密码格式正确");
+			}else{
+				$(".showI4").css("color","red").html("密码格式有误，请重新输入");
+			}
+		})
+		// 重复密码验证
+		$("#againPass").blur(function(){
+			let pass1=$("#password").val();
+			let pass2=$("#againPass").val();
+			if(pass1==pass2){
+				$(".showI5").css("color","green").html("密码正确");
+
+			}else{
+				$(".showI5").css("color","red").html("两次密码输入不一致");
+
+			}
+		})
+		// 图片验证切换
+		var arr=['h98j','BtYt','tCSL','QDqq','U3F5','KRQc','UKBh']; 
+		var index=6;
+		$(".imgs").click(function(){
+			index=parseInt(Math.random()*7);
+			$(this).attr("src","img/ca"+index+".png");
+		})
+
+		$("#picYzm").blur(function(){
+			if(arr[index]==$(this).val()){
+				$(".showI2").html("验证通过").css(
+					{
+						
+						display:"block",
+						color:"green"
+					});
+				$("#regBtn").attr("enabled","enabled");
+                $("#regBtn").css("backgroundColor","#cc5252");
+			}else{
+				$(".showI2").html("验证码错误").css(
+					{
+						
+						display:"block",
+						color:"red"
+					});
+				$("#regBtn").attr("disabled","disabled");
+                $("#regBtn").css("backgroundColor","#ddd");
+			}
+		})
+
+		// 调用ajax
+		$("#regBtn").click(function(){
+			if($("#txt").val()=="" || $("#password").val()=="" || $("#picYzm").val()==""){
+				alert("输入内容不能为空！");
+				return;
+			}else{
+					ajax180803({
+					"url":"reg.php",
+					"param":"phone="+$("#txt").val()+"&passW="+$("#password").val(),
+					"func":aaa
+				})
+			}
+			
+		})
+
+		function aaa(str){
+			if(str==0){
+				alert("注册成功，请登录");
+				location.href="login.html";
+			}else{
+				alert("注册失败，请重新注册");
+				location.href="reg.html";
+			}
+		}
+
+	})
+</script>

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>购物车</title>
+<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="css/shoppingCar.css"/>
+</head>
+<body>
+	<!-- top+nav -->
+	<div class="top">
+		<div class="top1">
+			<a href="#">
+				<img src="img/top1.jpg"/>
+			</a>
+		</div>
+	</div>
+	<div class="topNav">
+		<div class="topNav01 or">
+			<p class="topNav01Left">
+				<a href="#">正品保障，免息分期！</a>
+			</p>
+			<div class="topNav01Right">
+				<div class="navF1">
+					<a href="login.html">请登录</a>
+					<a href="reg.html" class="bigGifts">注册即送3500元大礼包</a>
+				</div>
+				<div id="welcomeBox">
+					<span class="call">您好:</span>
+					<span id="usernameSpan"></span>
+					<span id="drop_out">退出</span>
+				</div>
+				<div class="navF2">
+					<span class="line">|</span>
+					<a href="#" target="_blank">购物车</a>
+					<div class="service">
+						<ul id="nav" class="nav clearfix">
+							<li class="nLi">
+								<h3><a href="#" target="_blank">客户服务</a></h3>
+								<ul class="sub">
+									<li><a href="#">客户顾问</a></li>
+									<li><a href="#">售后维修</a></li>
+									<li><a href="#">帮助中心</a></li>
+									<li><a href="#">办理信用卡</a></li><br/><br/>
+									<div class="empLine"></div>
+									<p class="teltxt">服务专线：400-883-2688</p>
+									<p class="teltxt">外呼号码：020-83931899</p>
+								</ul>	
+							</li>
+						</ul>
+					</div>
+					<a href="#" target="_blank">会员福利</a>
+					<span class="line">|</span>
+					<a href="#" target="_blank">ENGLISH</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- header -->
+	<div class="w_header">
+		<div class="w_header01 or">
+			<div class="header_left">
+				<a href="#">
+					<img src="img/logo.png"/>
+				</a>
+				<a href="#">
+					<img src="img/font.png"/>
+				</a>
+			</div>
+			<div class="header_middle">
+				<img src="img/doing.jpg"/>
+			</div>
+		</div>
+	</div>
+	<!-- main -->
+	<div class="w_main">
+		<div class="cart_wrap">
+			<h5 class="tit_h5">全部商品(<i id="allQuantity">1</i>)</h5>
+			<div class="login-tips">
+				温馨提示：登录后购物车的商品将保存到您账户中，
+				<a href="login.html">立即登录</a>
+			</div>
+			<div class="cart_nav">
+				<dl class="clearfix">
+					<dt class="select_tik">
+						<span class="iconCheck01-1"></span>
+						<span class="iconCheck01-2"></span>
+					</dt>
+					<dd class="all_txt">全选</dd>
+					<dd class="msg_txt">商品信息</dd>
+				</dl>
+				<ul class="clearfix">
+					<li>单价</li>
+					<li>数量</li>
+					<li>小计</li>
+					<li>操作</li>
+				</ul>
+			</div>
+			<div class="normal-goods">
+				<!--<div class="W_store_floor">-->
+					<!--<div class="store_top">-->
+						<!--<span class="select_tik">-->
+							<!--<i class="iconCheck01-1"></i>-->
+							<!--<i class="iconCheck01-2"></i>-->
+						<!--</span>-->
+						<!--<a href="javascript:void(0);" class="store_name fl">海鸥旗舰店</a>-->
+					<!--</div>-->
+					<!--<div class="goods_floor">-->
+						<!--<div class="goods_info clearfix">-->
+							<!--<div class="goods_right clearfix">-->
+								<!--<span class="select_tik">-->
+									<!--<i class="iconCheck01-1"></i>-->
+									<!--<i class="iconCheck01-2"></i>-->
+								<!--</span> -->
+								<!--<a href="detail.html" target="_blank">-->
+									<!--<div class="goods_img">-->
+										<!--<img src="img/001.jpg" alt="">-->
+									<!--</div>-->
+									<!--<div class="goods_txt fl">-->
+										<!--<div class="goods_a">-->
+											<!--<p class="p1">海鸥表Sea-gull-陀飞轮系列 818.17.8810 陀飞轮手动机械男表</p>-->
+											<!--<p class="specifications">真皮 白色 鳄鱼皮</p>-->
+										<!--</div>-->
+									<!--</div>-->
+								<!--</a>-->
+								<!--<ul class="fr">-->
+									<!--<li class="unit_price"> ¥<em>9500</em></li>-->
+									<!--<li class="goods_num">-->
+										<!--<span class="reduce calc-btns">-</span> -->
+										<!--<input type="text" class="num" value="1"readonly="">-->
+										<!--<span class="add calc-btns">+</span>-->
+									<!--</li>-->
+									<!--<li class="total_price">¥<em class="subTotal">9500</em></li>-->
+									<!--<li class="others">-->
+										<!--<a href="javascript:void(0);" class="delete_goods">删除</a> -->
+										<!--<a href="javascript:void(0);" class="to_collection">移入收藏</a>-->
+									<!--</li>-->
+								<!--</ul>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+			<div class="W_settle_floor" id="W_settle_floor">
+				<ul class="clearfix selectUls">
+					<li class="select_tik">
+						<span class="iconCheck01-1"></span>
+						<span class="iconCheck01-2"></span>
+					</li>
+					<li class="sel_all_txt">
+						<a href="javascript:void(0);">全选</a>
+					</li>
+					<li class="delete_goods">
+						<a href="javascript:void(0);">删除</a>
+					</li>
+					<li class="move_in_collect">
+						<a href="javascript:void(0);">移入收藏</a>
+					</li>
+					<li class="clear_fail_goods">
+						<a href="javascript:void(0);">清空失效商品</a>
+					</li>
+					<li class="choose_num">已选商品<em id="selectedQuantity">0</em>件</li><li id="settle_btn"><a href="javascript:void(0);">结算</a></li>
+					<li class="settle_price">
+						<p class="p11">合计<span>¥<i id="payableAmount">0</i>
+						</span></p>
+						<p class="p22">总额&nbsp;¥<em id="goodsAmount">0</em><span class="h">活动优惠¥<i id="totalDiscount">0</i></span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cart_empty" id="cart_empty">
+			<div id="iconCart"></div>
+			<p class="pp1">你的购物车还是空的</p>
+			<p class="pp2 empty-login-tips">现在
+				<a href="javascript:void(0);" class="to_login">登录</a>，购物车信息将一直为您保存
+			</p>
+			<div class="cart_btn">
+				<a href="/" class="goto_shoping">马上购物</a>
+				<a href="https://pu.wbiao.cn/member/collection" class="look_collect">看看收藏</a>
+			</div>
+		</div>
+	</div>
+	<!-- footer-top -->
+	<div class="footer_top">
+		<div class="footer_top01">
+			<a href="#">
+				<img src="img/icon01.jpg"/>
+				正品保障
+			</a>
+			<a href="#">
+				<img src="img/icon02.jpg"/>
+				免息分期
+			</a>
+			<a href="#">
+				<img src="img/icon03.jpg"/>
+				全球联保
+			</a>
+			<a href="#">
+				<img src="img/icon04.jpg"/>
+				假一赔三
+			</a>
+			<a href="#">
+				<img src="img/icon05.jpg"/>
+				 终身售后
+			</a>
+		</div> 
+	</div>
+	<!-- footeer_middle -->
+	<div class="footer_middle">
+		<div class="footer_middle01">
+			<div class="footer_m1">
+				<div class="inst_left">
+					<div class="inst_leftTop">
+						<h3>客服电话</h3>
+						<h1>400-883-2688</h1>
+						<span>外呼电话</span>
+						<span>020-83931899</span>
+					</div>
+					<div class="repair">
+						<a href="#">售后维修</a>
+					</div>	
+				</div>
+				<div class="inst_middle">
+					<dl>
+						<dt>新手指南</dt>
+						<dd>
+							<a href="#">注册新会员</a>
+							<a href="#">购物流程</a>
+							<a href="#">手表小知识</a>
+							<a href="#">退换货流程</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>支付</dt>
+						<dd>
+							<a href="#">支付方式</a>
+							<a href="#">分期付款</a>
+							<a href="#">发票说明</a>
+							<a href="#">支付问题</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>配送</dt>
+						<dd>
+							<a href="#">包裹签收</a>
+							<a href="#">配送方式</a>
+							<a href="#">配送说明</a>
+							<a href="#">自提流程</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>万表保障</dt>
+						<dd>
+							<a href="#">正品保障</a>
+							<a href="#">售后服务</a>
+							<a href="#">价格保护</a>
+							<a href="#">七天退换说明</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>服务中心</dt>
+						<dd>
+							<a href="#">关于万表</a>
+							<a href="#">商务合作</a>
+							<a href="#">万表声明</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="inst_right">
+					<a href="#">
+						<img src="img/f1.jpg"/>
+					</a>
+				</div>
+			</div>
+			<div class="footer_m2">
+				<div class="footerList">
+					<a href="#">万表app</a>
+					<a href="#">万表名匠</a>
+					<a href="#">网站联盟</a>
+					<a href="#">新款手表</a>
+					<a href="#">热销</a>
+					<a href="#">天猫万表网旗舰店</a>
+					<a href="#">京东万表网旗舰店</a>
+					<a href="#">万表达人</a>
+					<a href="#">手表资讯</a>
+					<a href="#">天梭手表</a>
+					<span class="more_link more_link1">></span>
+					<!-- <br/> -->
+					<p class="wb_more_link" id="link1" >
+						<a href="#">欧米茄手表</a>
+						<a href="#">卡西欧手表</a>
+						<a href="#">卡地亚手表</a>
+						<a href="#">手表评论</a>
+						<a href="#">手表排行榜</a>
+						<a href="#">珠宝新闻</a>
+						<a href="#">手表问答</a>
+						<a href="#">智能手表</a>
+						<a href="#">信用卡中心</a>
+						<a href="#">手表专题</a>
+						<a href="#">手表常识</a>
+					</p>
+				</div>
+				<div class="copyright">
+					<p>	万表网名表商城 版权所有 2008-2018 <a href="#">ICP备案证书号:粤ICP备09108738号</a>网监备案:4401060103141
+					</p>
+					<p>广州市万表科技股份有限公司 地址:广州市番禺区番禺大道北60-1号</p>
+					<p>Copyright 2008-2017 WWW.WBIAO.CN.LTD ALL RIGHT RESERVED.</p>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<!-- footer_bottom -->
+	<div class="footer_bottom">
+		<div class="footer_bottom01">
+			<div class="fImgs">
+				<a href="#">
+					<img src="img/ff1.png"/>
+				</a>
+				<a href="#">
+					<img src="img/ff.png"/>
+				</a>
+				<a href="#">
+					<img src="img/ff2.png"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- 左边固定图 -->
+	<div class="fixImg">
+		<img src="img/bgift.png"/>
+	</div>
+</body>
+</html>
+<!--<script type="text/javascript" src="js/jquery1.42.min.js"></script>-->
+<!--<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>-->
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script  type="text/javascript" src="js/cookieTools.js"></script>
+<!--<script  type="text/javascript" src="js/common.js"></script>-->
+<script  type="text/javascript" src="js/shoppingCar.js?p=9"></script>
+<script  type="text/javascript" src="js/ajax1808.js"></script>
+
+
+
+
+
+
